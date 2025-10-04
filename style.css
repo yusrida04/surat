@@ -60,7 +60,7 @@
             grid-template-columns: repeat(2, 1fr);
             gap: 40px;
             padding: 20px;
-            /* Memastikan area scroll di bawah grid */
+           
             padding-bottom: 5vh; 
         }
 
@@ -71,7 +71,7 @@
             pointer-events: all; 
         }
         
-        /* Mengatur kursor pada .envelope-body agar terasa clickable */
+        
         .envelope-body {
             cursor: pointer;
         }
@@ -82,7 +82,7 @@
             aspect-ratio: 1.8/1;
             transform-style: preserve-3d;
             transition: transform 0.3s ease;
-            pointer-events: none; /* Klik menembus ke .envelope-body */
+            pointer-events: none; 
         }
 
         .envelope-wrapper:hover .envelope-container {
@@ -96,7 +96,7 @@
         }
 
         .envelope-back, .envelope-front, .envelope-flap {
-            pointer-events: none; /* Biarkan klik ditangkap oleh .envelope-body */
+            pointer-events: none; 
         }
 
         .envelope-back {
@@ -122,7 +122,7 @@
             height: 52%;
             transform-origin: top center;
             transform-style: preserve-3d;
-            /* Animasi Flap Cepat */
+            
             transition: transform 0.5s cubic-bezier(0.4, 0.0, 0.2, 1); 
             z-index: 3;
             clip-path: polygon(0 0, 100% 0, 50% 100%);
@@ -160,7 +160,7 @@
             justify-content: center;
             gap: 10px; 
             z-index: 2; 
-            /* Kunci: Menerima klik untuk membuka surat */
+            
             pointer-events: all; 
         }
         
@@ -180,7 +180,7 @@
             margin-bottom: 0;
         }
 
-        /* Warna Amplop (Body dipertahankan) */
+        
         .env-kesan .envelope-back, .env-kesan .envelope-front, .env-kesan .envelope-body { background: #FFDAB9; }
         .env-kesan .flap-front { background: linear-gradient(to bottom, #F4C4A0 0%, #FFDAB9 100%); }
         .env-kesan .flap-back { background: linear-gradient(to bottom, #FFDAB9 0%, #F4C4A0 100%); }
@@ -208,7 +208,7 @@
             border-radius: 4px;
             box-shadow: inset 0 0 20px rgba(0,0,0,0.05);
             opacity: 0;
-            /* Animasi Kertas Cepat */
+           
             transition: all 0.3s ease; 
             z-index: 2; 
             pointer-events: none;
@@ -504,11 +504,11 @@
                 font-size: 1em;
             }
         }
-        /* --- STYLE BARU: FOOTER INFO --- */
+        
 .footer-info {
     width: 100%;
-    padding: 30px 0;
-    margin-top: 50px; /* Jarak dari grid amplop */
+    padding: 10px 0;
+    margin-top: 50px; 
     text-align: center;
     color: #8B6F47;
     border-top: 1px solid #E5D5C3;
@@ -531,8 +531,8 @@
         display: inline-block;
         padding: 5px 10px;
         text-decoration: none;
-        background-color: #ae8b68; /* Warna cokelat tua/sepia */
-        color: white; /* Teks tombol putih */
+        background-color: #ae8b68; 
+        color: white; 
         border: none;
         border-radius: 5px;
         cursor: pointer;
@@ -542,6 +542,7 @@
     }
     
     .tombol-linkedin:hover {
-        background-color: #795e42; /* Warna sedikit lebih gelap saat hover */
+        background-color: #795e42; 
     }
+
 
