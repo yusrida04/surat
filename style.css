@@ -11,6 +11,7 @@
             padding: 20px;
             position: relative;
             overflow-x: hidden;
+            touch-action: pan-y; 
         }
 
         body::before {
@@ -543,3 +544,4 @@
     .tombol-linkedin:hover {
         background-color: #795e42; /* Warna sedikit lebih gelap saat hover */
     }
+
