@@ -5,7 +5,7 @@
         }
 
         body {
-            font-family: 'Georgia', serif;
+            font-family: serif;
             background: linear-gradient(135deg, #FAFAF5 0%, #FFE5D0 100%);
             min-height: 100vh;
             padding: 20px;
@@ -26,6 +26,7 @@
                 radial-gradient(circle at 80% 70%, rgba(201, 166, 107, 0.08) 0%, transparent 50%);
             pointer-events: none;
             z-index: 0;
+            touch-action: pan-y; 
         }
 
         .ornament {
@@ -50,7 +51,7 @@
         h1 {
             text-align: center;
             color: #8B6F47;
-            font-size: 2.5em;
+            font-size: 2em;
             margin-bottom: 40px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
         }
@@ -544,5 +545,6 @@
     .tombol-linkedin:hover {
         background-color: #795e42; 
     }
+
 
 
