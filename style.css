@@ -1,16 +1,18 @@
-* {
+ * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
         body {
-            font-family: serif;
+           
+            font-family: 'Times New Roman', Times, serif; 
             background: linear-gradient(135deg, #FAFAF5 0%, #FFE5D0 100%);
             min-height: 100vh;
             padding: 20px;
             position: relative;
             overflow-x: hidden;
+            
             touch-action: pan-y; 
         }
 
@@ -26,7 +28,6 @@
                 radial-gradient(circle at 80% 70%, rgba(201, 166, 107, 0.08) 0%, transparent 50%);
             pointer-events: none;
             z-index: 0;
-            touch-action: pan-y; 
         }
 
         .ornament {
@@ -51,7 +52,7 @@
         h1 {
             text-align: center;
             color: #8B6F47;
-            font-size: 2em;
+            font-size: 2.5em;
             margin-bottom: 40px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
         }
@@ -61,8 +62,7 @@
             grid-template-columns: repeat(2, 1fr);
             gap: 40px;
             padding: 20px;
-           
-            padding-bottom: 5vh; 
+            padding-bottom: 50px; 
         }
 
         .envelope-wrapper {
@@ -71,8 +71,7 @@
             position: relative;
             pointer-events: all; 
         }
-        
-        
+
         .envelope-body {
             cursor: pointer;
         }
@@ -123,7 +122,6 @@
             height: 52%;
             transform-origin: top center;
             transform-style: preserve-3d;
-            
             transition: transform 0.5s cubic-bezier(0.4, 0.0, 0.2, 1); 
             z-index: 3;
             clip-path: polygon(0 0, 100% 0, 50% 100%);
@@ -161,22 +159,21 @@
             justify-content: center;
             gap: 10px; 
             z-index: 2; 
-            
             pointer-events: all; 
         }
-        
+
         .envelope-body .envelope-icon {
             font-size: 2.5em; 
             line-height: 1;
             color: #6B5744;
-            text-shadow: 1px 1px 2px rgba(255,255,255,0.5);
+            text-shadow: 2px 2px 4px rgba(255,255,255,0.5);
         }
 
         .envelope-title {
             font-size: 1.4em;
             color: #6B5744;
             font-weight: bold;
-            text-shadow: 1px 1px 2px rgba(255,255,255,0.5);
+            text-shadow: 2px 2px 4px rgba(255,255,255,0.5);
             margin-top: 10px;
             margin-bottom: 0;
         }
@@ -209,7 +206,6 @@
             border-radius: 4px;
             box-shadow: inset 0 0 20px rgba(0,0,0,0.05);
             opacity: 0;
-           
             transition: all 0.3s ease; 
             z-index: 2; 
             pointer-events: none;
@@ -221,13 +217,17 @@
             transition-delay: 0.2s; 
             z-index: 4; 
         }
-        
+
         .envelope-wrapper.closing .letter-paper {
             opacity: 0;
             transform: translate(-50%, -50%) translateY(30px) scale(0.9); 
-            /* Animasi Kertas Masuk Cepat */
             transition: all 0.4s ease 0s; 
             z-index: 2; 
+        }
+
+        
+        .letter-modal p {
+            line-height: 1.6; 
         }
 
         .overlay {
@@ -248,7 +248,7 @@
             opacity: 1;
             pointer-events: all;
         }
-        
+
         .letter-modal {
             position: fixed;
             top: 50%;
@@ -272,40 +272,7 @@
             opacity: 1;
         }
 
-        .letter-content {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.5s ease 0.2s; 
-        }
-
-        .letter-modal.active .letter-content {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .letter-modal .letter-icon {
-            font-size: 3.5em;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .letter-modal h2 {
-            color: #8B6F47;
-            text-align: center;
-            margin-bottom: 30px;
-            font-size: 2.2em;
-            border-bottom: 2px solid #E5D5C3;
-            padding-bottom: 15px;
-        }
-
-        .letter-modal p {
-            color: #5C4D3C;
-            line-height: 1.9;
-            font-size: 1.15em;
-            margin-bottom: 18px;
-            text-align: justify;
-        }
-
+        
         .close-btn {
             position: absolute;
             top: 15px;
@@ -319,7 +286,7 @@
             font-size: 1.8em;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2); 
             display: flex;
             align-items: center;
             justify-content: center;
@@ -352,27 +319,38 @@
             transform: scale(1);
         }
 
-        /* Penutup */
+        
         .closing-section {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, #FFDAB9 0%, #FFE5C2 50%, #A8BCA1 100%);
+            background: rgba(0,0,0,0.7); 
             z-index: 2000;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            opacity: 0;
-            pointer-events: none;
+            opacity: 0; 
+            pointer-events: none; 
             transition: opacity 0.8s ease;
         }
 
         .closing-section.active {
             opacity: 1;
             pointer-events: all;
+        }
+
+        .closing-content {
+            background: #FFFEF9; 
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            max-width: 600px;
+            animation: fadeInUp 1s ease;
+            position: relative;
+            text-align: center;
         }
 
         .closing-close-btn {
@@ -401,28 +379,6 @@
             transform: rotate(90deg) scale(1.1);
         }
 
-        .closing-content {
-            text-align: center;
-            padding: 40px;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            max-width: 600px;
-            animation: fadeInUp 1s ease;
-            position: relative;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
         .closing-content h2 {
             color: #8B6F47;
             font-size: 2.5em;
@@ -435,116 +391,85 @@
             line-height: 1.8;
             margin-bottom: 20px;
         }
-
-        .closing-icon {
-            font-size: 4em;
-            margin-bottom: 20px;
-            animation: bounce 2s infinite;
-        }
-
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
-        }
-
-        .signature {
-            margin-top: 30px;
-            font-style: italic;
+       
+        .footer-info {
+            width: 100%;
+            padding: 30px 0;
+            margin-top: 30px; 
+            text-align: center;
             color: #8B6F47;
-            font-size: 1.3em;
+            border-top: 1px solid #E5D5C3;
+            position: relative;
+            z-index: 1;
         }
 
-        @media (max-width: 1023px) and (min-width: 768px) {
+        .footer-info p {
+            font-size: 0.95em;
+            line-height: 1.4; 
+            margin: 3px 0; 
+        }
+
+        .footer-info .signature {
+            margin-top: 15px;
+            font-style: italic;
+            font-weight: bold;
+        }
+
+        .tombol-linkedin {
+            display: inline-block;
+            padding: 5px 10px;
+            text-decoration: none;
+            background-color: #ae8b68; 
+            color: white; 
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Times New Roman', Times, serif; 
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .tombol-linkedin:hover {
+            background-color: #795e42; 
+        }
+        
+
+        
+        @media (min-width: 768px) {
             .grid {
+                padding-bottom: 50px; 
+            }
+            .footer-info {
+                margin-top: 30px; 
+            }
+        }
+
+        /* Kunci Perbaikan Mobile */
+        @media (max-width: 767px) {
+            .grid {
+                grid-template-columns: 1fr; 
                 gap: 30px;
-                padding: 15px;
-                padding-bottom: 30vh;
+                padding: 10px;
+                padding-bottom: 30px; 
+            }
+            .envelope-body {
+                
+                justify-content: center; 
+                align-items: center;
+            }
+            .footer-info {
+                margin-top: 20px; 
             }
             
             h1 {
-                font-size: 2.2em;
-                margin-bottom: 30px;
+                display: flex;
+                align-items: center; 
+                justify-content: center; 
+                flex-wrap: wrap; 
+                font-size: 1.8em; 
+                line-height: 1.2; 
+            }
+            h1 > * {
+                margin: 0 4px; 
             }
         }
-
-        @media (max-width: 767px) {
-            .grid {
-                grid-template-columns: 1fr;
-                gap: 30px;
-                padding: 10px;
-                padding-bottom: 30vh;
-            }
-
-            .letter-modal {
-                max-width: 95%; 
-            }
-
-            h1 {
-                font-size: 1.8em;
-                margin-bottom: 25px;
-            }
-
-            .envelope-icon {
-                font-size: 2.5em;
-            }
-
-            .envelope-title {
-                font-size: 1.2em;
-            }
-
-            .letter-modal {
-                padding: 30px 25px;
-                width: 95%;
-            }
-
-            .letter-modal h2 {
-                font-size: 1.7em;
-            }
-
-            .letter-modal p {
-                font-size: 1em;
-            }
-        }
-        
-.footer-info {
-    width: 100%;
-    padding: 10px 0;
-    margin-top: 50px; 
-    text-align: center;
-    color: #8B6F47;
-    border-top: 1px solid #E5D5C3;
-    position: relative;
-    z-index: 1;
-}
-
-.footer-info p {
-    font-size: 0.95em;
-    line-height: 1.6;
-    margin: 5px 0;
-}
-
-.footer-info .signature {
-    margin-top: 15px;
-    font-style: italic;
-    font-weight: bold;
-}
-.tombol-linkedin {
-        display: inline-block;
-        padding: 5px 10px;
-        text-decoration: none;
-        background-color: #ae8b68; 
-        color: white; 
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        font-family: Arial, sans-serif;
-        font-weight: bold;
-        transition: background-color 0.3s;
-    }
-    
-    .tombol-linkedin:hover {
-        background-color: #795e42; 
-    }
-
-
-
